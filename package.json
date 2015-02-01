@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/werevamp/my-gulp",
   "devDependencies": {
+    "browser-sync": "^2.0.0-rc3",
+    "gulp": "^3.8.10",
     "require-dir": "^0.1.0"
   }
 }
