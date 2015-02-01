@@ -3,12 +3,12 @@ var browser_sync  = require('browser-sync');
 var sass          = require('gulp-sass');
 var sourcemaps    = require('gulp-sourcemaps');
 var autoprefixer  = require('gulp-autoprefixer');
-var handle_errors = require('../util/handle_errors');
+var handle_errors = require('../util/handle-errors');
 
-var paths {
+var paths = {
 	scss: './scss/**/*.scss',
 	css: './css'
-}
+};
 
 gulp.task('sass', function() {
 	return gulp.src(paths.scss)
