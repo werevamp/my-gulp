@@ -4,6 +4,9 @@ var sass          = require('gulp-sass');
 var sourcemaps    = require('gulp-sourcemaps');
 var autoprefixer  = require('gulp-autoprefixer');
 var handle_errors = require('../util/handle-errors');
+var through       = require('through2');
+var notify        = require('gulp-notify');
+var plumber       = require('gulp-plumber');
 
 var paths = {
 	scss: './scss/**/*.scss',
@@ -14,7 +17,7 @@ gulp.task('sass', function() {
 	return gulp.src(paths.scss)
 		.pipe(sourcemaps.init())
 		.pipe(sass())
-		.on('errors', handle_errors)
+		.on('error', handle_errors)
 		.pipe(sourcemaps.write())
 		.pipe(autoprefixer({ browsers: ['last 2 version'] }))
 		.pipe(gulp.dest(paths.css))
