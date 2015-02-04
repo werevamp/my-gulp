@@ -1,8 +1,8 @@
-var gutil = require('gulp-util');
+var gutil         = require('gulp-util');
 var pretty_hrtime = require('pretty-hrtime');
 var start_time;
 
-module.export = {
+module.exports = {
 	start: function(filepath) {
 		start_time = process.hrtime();
 		gutil.log('Bundling', gutil.colors.green(filepath) + '...');
