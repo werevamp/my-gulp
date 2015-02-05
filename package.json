@@ -2,20 +2,34 @@
   "name": "my-gulp",
   "version": "1.0.0",
   "description": "My gulp file",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/werevamp/my-gulp"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/werevamp/my-gulp/issues"
   },
   "homepage": "https://github.com/werevamp/my-gulp",
+	"browser": {
+		"underscore": "backbone/node_modules/underscore",
+		"plugin": "./src/scripts/vendor/jquery-plugin.js"
+	},
+	"browserify": {
+		"transform": [
+			"browserify-shim",
+			"coffeeify",
+			"hbsfy"
+		]
+	},
+	"browserify-shim": {
+		"plugin": {
+			"exports": "plugin",
+			"depends": [
+				"jquery:$"
+			]
+		}
+	},
   "devDependencies": {
     "browser-sync": "^2.0.0-rc3",
     "browserify": "^8.1.3",

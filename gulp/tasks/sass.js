@@ -9,8 +9,8 @@ var notify        = require('gulp-notify');
 var plumber       = require('gulp-plumber');
 
 var paths = {
-	scss: './scss/**/*.scss',
-	css: './css'
+	scss: './src/scss/**/*.scss',
+	css: './dest/css'
 };
 
 gulp.task('sass', function() {

@@ -1,5 +1,5 @@
 var gulp = require('gulp');
 
 gulp.task('watch', ['browser_sync'], function() {
-	gulp.watch( './scss/**/*.scss', ['sass'] );
+	gulp.watch( './dest/scss/**/*.scss', ['sass'] );
 });
