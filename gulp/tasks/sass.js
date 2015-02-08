@@ -6,11 +6,10 @@ var autoprefixer  = require('gulp-autoprefixer');
 var handle_errors = require('../util/handle-errors');
 var through       = require('through2');
 var notify        = require('gulp-notify');
-var plumber       = require('gulp-plumber');
 
 var paths = {
 	scss: './src/scss/**/*.scss',
-	css: './dest/css'
+	css: './build/'
 };
 
 gulp.task('sass', function() {

@@ -10,7 +10,7 @@ var _             = require('lodash');
 
 var browserTask = function(callback, dev_mode) {
 
-	var bundle_queue = config.bundle.length;
+	var bundle_queue = config.length;
 
 	var browserifyThis = function(bundle_config) {
 
@@ -28,7 +28,7 @@ var browserTask = function(callback, dev_mode) {
 				.bundle()
 				.on('error', handle_errors)
 				.pipe(source(bundle_config.outputName))
-				.pipe(gulp.dest(dest))
+				.pipe(gulp.dest(bundle_config.dest))
 				.on('end', function() {
 
 					bundle_logger.end(bundle_config.outputName);
@@ -63,7 +63,7 @@ var browserTask = function(callback, dev_mode) {
 		return bundle();
 	};
 
-	config.bundle_config.forEach(browserifyThis);
+	config.forEach(browserifyThis);
 };
 
 gulp.task('browserify', browserTask);
