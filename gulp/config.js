@@ -1,6 +1,14 @@
-var dest = './build';
-var src = './src';
+module.exports = {
+	browserify: [{
+		entries: './src/scripts/page.js',
+		dest: './build',
+		outputName: 'page.js',
+		// list of externally available modules to exclude from the bundle
+		external: ['jquery', 'underscore']
+	}]
+};
 
+/*
 module.exports = {
 	browserify: [{
 		entries: src + '/scripts/global.coffee',
@@ -20,3 +28,4 @@ module.exports = {
 		external: ['jquery', 'underscore']
 	}]
 };
+*/
