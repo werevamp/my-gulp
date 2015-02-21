@@ -19,12 +19,12 @@ var browserTask = function(callback, dev_mode) {
 			bundle_config = _.omit(bundle_config, ['external', 'require']);
 		}
 
-		var b = browserify(bundle_config);
+		var browserify_config = browserify(bundle_config);
 
 		var bundle = function() {
 			bundle_logger.start(bundle_config.outputName);
 
-			return b
+			return browserify_config
 				.bundle()
 				.on('error', handle_errors)
 				.pipe(source(bundle_config.outputName))
@@ -45,18 +45,18 @@ var browserTask = function(callback, dev_mode) {
 		};
 
 		if(dev_mode) {
-			b = watchify(b);
+			browserify_config = watchify(browserify_config);
 
-			b.on('update', bundle);
+			browserify_config.on('update', bundle);
 			bundle_logger.watch(bundle_config.outputName);
 		} else {
 
 			if(bundle_config.require) {
-				b.require(bundle_config.require)
+				browserify_config.require(bundle_config.require)
 			}
 
 			if(bundle_config.external) {
-				b.external(bundle_config.external);
+				browserify_config.external(bundle_config.external);
 			}
 		}
 

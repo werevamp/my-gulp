@@ -1,31 +1,19 @@
-module.exports = {
-	browserify: [{
-		entries: './src/scripts/page.js',
-		dest: './build',
-		outputName: 'page.js',
-		// list of externally available modules to exclude from the bundle
-		external: ['jquery', 'underscore']
-	}]
-};
+var source = './src';
+var destination = './build';
 
-/*
 module.exports = {
+	browserSync {
+		proxy: 'my-gulp.dev'
+	},
+	sass: {
+		src: source + '/scss/**/*.scss',
+		dest: destination + ''
+	},
 	browserify: [{
-		entries: src + '/scripts/global.coffee',
-		dest: dest,
-		outputName: 'global.js',
-		// Additional file extentions to make optional
-		extensions: ['.coffee', '.hbs'],
-		// list of modules to make require-able externally
-		require: ['jquery', 'backbone/node_modules/underscore']
-		// See https://github.com/greypants/gulp-starter/issues/87 for note about
-		// why this is 'backbone/node_modules/underscore' and not 'underscore'
-	}, {
-		entries: src + '/scripts/page.js',
-		dest: dest,
+		entries: source + '/scripts/page.js',
+		dest: destination,
 		outputName: 'page.js',
 		// list of externally available modules to exclude from the bundle
 		external: ['jquery', 'underscore']
 	}]
 };
-*/
