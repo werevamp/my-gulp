@@ -1,0 +1,22 @@
+{
+  "name": "my-gulp",
+  "description": "This is my gulpfile",
+  "main": "gulpfile.js",
+  "authors": [
+    "Albert De Guzman <adeguzman@launchbrigade.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/werevamp/my-gulp",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "~6.1.1"
+  }
+}
