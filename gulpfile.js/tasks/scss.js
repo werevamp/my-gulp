@@ -18,7 +18,7 @@ gulp.task('sass', function() {
 		.pipe(autoprefixer({ browsers: ['last 2 version'] }))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(config.dest))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 gulp.task('sass:prod', function() {

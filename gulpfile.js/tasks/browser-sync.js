@@ -4,7 +4,7 @@ var config = require('../config').browserSync;
 
 gulp.task('browser-sync', function() {
 	browserSync.init({
-		proxy: config.proxy,
+		proxy: "my-gulp.dev",
 		open: false
 	});
 });

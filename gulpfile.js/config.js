@@ -13,6 +13,6 @@ module.exports = {
 		includePaths: externalCssPaths || []
 	},
 	browserSync: {
-		proxy: 'my-gulp.dev'
+		proxy: testDomain
 	}
 };
