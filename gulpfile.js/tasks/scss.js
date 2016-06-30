@@ -8,6 +8,7 @@ var notify = require('../library/notify');
 //var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
+var cssnano = require('gulp-cssnano');
 var config = require('../config').sass;
 
 gulp.task('sass', function() {
@@ -16,6 +17,7 @@ gulp.task('sass', function() {
 		.pipe(plumber({errorHandler: notify}))
 		.pipe(sass({ includePaths: config.includePaths }))
 		.pipe(autoprefixer({ browsers: ['last 2 version'] }))
+		.pipe(cssnano())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(config.dest))
 		.pipe(browserSync.stream({match: '**/*.css'}));
