@@ -1,4 +1,4 @@
-var source = './src',
+var source = 'src',
 		destination = './assets',
 		testDomain = 'my-gulp.dev',
 		bowerDir = './bower_components',
@@ -13,7 +13,8 @@ module.exports = {
 		includePaths: externalCssPaths || []
 	},
 	javascript: {
-		src: source + '/js/**/*.js',
+		file: 'main.js',
+		src: source + '/js/main.js',
 		dest: destination + '/js/'
 	},
 	browserSync: {

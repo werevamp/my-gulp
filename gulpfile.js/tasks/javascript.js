@@ -11,17 +11,18 @@ var gulp = require('gulp'),
 		config = require('../config').javascript;
 
 gulp.task('javascript', function() {
-	var bundler = watchify(browserify('src/js/main.js').transform(babelify, {
-		presets: ["es2015"]
+	var bundler = watchify(browserify(config.src, { debug: true }).transform(babelify, {
+		presets: ["es2015"],
+		sourceMaps: true
 	}));
 
 	function rebundle() {
 		bundler.bundle()
 			.on('error', function (err) { console.error(err); this.emit('end'); })
-			.pipe(source('main.js'))
+			.pipe(source(config.file))
 			.pipe(buffer())
-			.pipe(sourcemaps.init())
-			.pipe(sourcemaps.write())
+			.pipe(sourcemaps.init({ loadMaps: true }))
+			.pipe(sourcemaps.write('./'))
 			.pipe(gulp.dest(config.dest))
 			.pipe(browserSync.stream());
 	}
