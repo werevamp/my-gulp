@@ -12,6 +12,10 @@ module.exports = {
 		dest: destination + '/css/',
 		includePaths: externalCssPaths || []
 	},
+	javascript: {
+		src: source + '/js/**/*.js',
+		dest: destination + '/js/'
+	},
 	browserSync: {
 		proxy: testDomain
 	}
