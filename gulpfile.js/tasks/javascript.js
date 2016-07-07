@@ -28,7 +28,7 @@ gulp.task('javascript', function() {
 	}
 
 	bundler.on('update', function() {
-		console.log('-> bundling...');
+		//console.log('-> bundling...');
 		rebundle();
 	});
 
