@@ -7,6 +7,7 @@ var gulp = require('gulp'),
 		browserify = require('browserify'),
 		watchify = require('watchify'),
 		sourcemaps = require('gulp-sourcemaps'),
+		uglify = require('gulp-uglify'),
 		browserSync = require('browser-sync').get('My Gulp'),
 		config = require('../config').javascript;
 
@@ -22,6 +23,7 @@ gulp.task('javascript', function() {
 			.pipe(source(config.file))
 			.pipe(buffer())
 			.pipe(sourcemaps.init({ loadMaps: true }))
+			//.pipe(uglify())
 			.pipe(sourcemaps.write('./'))
 			.pipe(gulp.dest(config.dest))
 			.pipe(browserSync.stream());
