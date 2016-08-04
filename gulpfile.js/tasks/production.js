@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp');
-var config = require('../config');
+const gulp = require('gulp'),
+			config = require('../config');
 
 gulp.task('production', ['sass:prod']);

@@ -1,15 +1,15 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync').get('My Gulp');
-var notify = require('../library/notify');
-//var notify = require('gulp-notify');
-var plumber = require('gulp-plumber');
-var autoprefixer = require('gulp-autoprefixer');
-var cssnano = require('gulp-cssnano');
-var config = require('../config').sass;
+const gulp = require('gulp'),
+			sass = require('gulp-sass'),
+			sourcemaps = require('gulp-sourcemaps'),
+			browserSync = require('browser-sync').get('My Gulp'),
+			notify = require('../library/notify'),
+			//var notify = require('gulp-notify');
+			plumber = require('gulp-plumber'),
+			autoprefixer = require('gulp-autoprefixer'),
+			cssnano = require('gulp-cssnano'),
+			config = require('../config').sass;
 
 gulp.task('sass', function() {
 	return gulp.src(config.src)

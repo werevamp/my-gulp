@@ -18,6 +18,7 @@ module.exports = {
 		dest: destination + '/js/'
 	},
 	browserSync: {
-		proxy: testDomain
+		proxy: testDomain,
+		open: false
 	}
 };

@@ -1,10 +1,7 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create('My Gulp');
-var config = require('../config').browserSync;
+const gulp = require('gulp');
+const browserSync = require('browser-sync').create('My Gulp');
+const config = require('../config').browserSync;
 
 gulp.task('browser-sync', function() {
-	browserSync.init({
-		proxy: "my-gulp.dev",
-		open: false
-	});
+	browserSync.init(config);
 });
